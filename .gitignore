@@ -45,3 +45,5 @@ demo_dlglog/
 tools/
 releases/*.zip
 releases/OpsReporter_SCADA/
+
+PUBLIC_URL.txt
