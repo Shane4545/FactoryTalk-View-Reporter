@@ -41,3 +41,7 @@ Thumbs.db
 screenshots/
 proof/
 _golden/
+demo_dlglog/
+tools/
+releases/*.zip
+releases/OpsReporter_SCADA/
