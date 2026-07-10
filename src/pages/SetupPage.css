@@ -1,0 +1,155 @@
+.setup-count {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--muted, #7a8aa0);
+  margin-left: 0.5rem;
+}
+
+.setup-filter-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.setup-filter-row .cfg-input {
+  max-width: 320px;
+}
+
+.setup-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.setup-ct-toggle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0.25rem 0 0.75rem;
+}
+
+.setup-table-wrap {
+  overflow-x: auto;
+  max-height: 520px;
+  overflow-y: auto;
+  border: 1px solid rgba(120, 140, 170, 0.25);
+  border-radius: 8px;
+}
+
+.setup-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.setup-table th {
+  position: sticky;
+  top: 0;
+  background: var(--panel, #10182a);
+  text-align: left;
+  padding: 0.45rem 0.5rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted, #7a8aa0);
+  z-index: 1;
+}
+
+.setup-table td {
+  padding: 0.3rem 0.5rem;
+  border-top: 1px solid rgba(120, 140, 170, 0.15);
+  vertical-align: middle;
+}
+
+.setup-table tr.is-off td {
+  opacity: 0.55;
+}
+
+.setup-table select,
+.setup-table input[type="text"],
+.setup-table input:not([type]) {
+  width: 100%;
+  min-width: 70px;
+  padding: 0.25rem 0.35rem;
+  font-size: 0.8rem;
+  background: rgba(10, 16, 30, 0.6);
+  color: inherit;
+  border: 1px solid rgba(120, 140, 170, 0.3);
+  border-radius: 5px;
+}
+
+.setup-hist {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.setup-hist small {
+  color: var(--muted, #7a8aa0);
+}
+
+.setup-mini {
+  max-width: 110px;
+}
+
+.setup-desc {
+  min-width: 220px;
+}
+
+.setup-dash {
+  color: var(--muted, #7a8aa0);
+}
+
+.setup-empty {
+  text-align: center;
+  padding: 1.25rem !important;
+  color: var(--muted, #7a8aa0);
+}
+
+.setup-roles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.75rem 1rem;
+}
+
+.setup-geo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.6rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.setup-sub {
+  margin: 1rem 0 0.5rem;
+  font-size: 0.95rem;
+}
+
+.setup-which {
+  color: var(--muted, #7a8aa0);
+  font-weight: 400;
+}
+
+.setup-chiprow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+}
+
+.setup-chip {
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(120, 140, 170, 0.35);
+  background: transparent;
+  color: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.setup-chip.is-on {
+  background: rgba(46, 160, 90, 0.25);
+  border-color: rgba(46, 200, 110, 0.7);
+}

@@ -1,0 +1,141 @@
+.explore-panel {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1rem 1.15rem;
+  display: grid;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+  max-width: 920px;
+}
+
+.explore-panel label {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+}
+
+.explore-panel select,
+.explore-panel input {
+  font: inherit;
+  font-size: 0.95rem;
+  text-transform: none;
+  letter-spacing: normal;
+  color: #0f172a;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.5rem;
+  border: 1px solid #cbd5e1;
+}
+
+.preset-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chip {
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: #334155;
+}
+
+.chip.is-active {
+  background: #0e7490;
+  border-color: #0e7490;
+  color: #ecfeff;
+  font-weight: 600;
+}
+
+.custom-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.explore-result {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.1rem 1.2rem 1.35rem;
+  max-width: 920px;
+}
+
+.explore-result h2 {
+  margin: 0.75rem 0 0.5rem;
+  font-size: 1.05rem;
+  color: #0e7490;
+}
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.65rem;
+}
+
+.kpi {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 0.55rem 0.65rem;
+}
+
+.kpi span {
+  display: block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+}
+
+.kpi strong {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 1.05rem;
+}
+
+.kpi-desc {
+  display: block;
+  font-style: normal;
+  font-size: 0.72rem;
+  color: #475569;
+  margin-top: 0.1rem;
+  line-height: 1.25;
+}
+
+.kpi small {
+  display: block;
+  font-weight: 500;
+  font-size: 0.7rem;
+  color: #94a3b8;
+  margin-top: 0.15rem;
+}
+
+.chart {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.chart-empty {
+  padding: 3rem;
+  text-align: center;
+  color: #94a3b8;
+  background: #f8fafc;
+  border-radius: 0.5rem;
+}
+
+.window {
+  margin: 0.55rem 0 0;
+  font-size: 0.8rem;
+  color: #64748b;
+}

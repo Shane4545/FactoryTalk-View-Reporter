@@ -1,0 +1,152 @@
+.trend-chart__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.15rem 0.5rem 0.4rem;
+  font-size: 0.78rem;
+  color: #64748b;
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+
+.trend-chart__range {
+  font-weight: 600;
+  color: #334155;
+  white-space: nowrap;
+}
+
+.trend-chart__hint {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  color: #94a3b8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.trend-chart__btns {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.trend-chart__btns button {
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  border-radius: 0.4rem;
+  min-width: 1.9rem;
+  padding: 0.15rem 0.5rem;
+  font: inherit;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+}
+
+.trend-chart__btns button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.trend-chart__btns button:not(:disabled):hover {
+  border-color: #0e7490;
+  color: #0e7490;
+}
+
+.trend-chart__plot {
+  position: relative;
+}
+
+.trend-chart__plot svg {
+  cursor: crosshair;
+  touch-action: none;
+  user-select: none;
+}
+
+.trend-tip {
+  position: absolute;
+  top: 10%;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
+  padding: 0.4rem 0.6rem;
+  font-size: 0.78rem;
+  min-width: 150px;
+  z-index: 5;
+}
+
+.trend-tip.is-pinned {
+  pointer-events: auto;
+  border-color: #0f172a;
+}
+
+.trend-tip__time {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+}
+
+.trend-tip__close {
+  margin-left: auto;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  line-height: 1;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0 0.1rem;
+}
+
+.trend-tip__row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.08rem 0;
+  white-space: nowrap;
+}
+
+.trend-tip__dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  flex: none;
+}
+
+.trend-tip__tag {
+  color: #475569;
+  font-weight: 600;
+}
+
+.trend-tip__val {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  color: #0f172a;
+}
+
+.trend-scroll {
+  position: relative;
+  height: 0.85rem;
+  margin: 0.35rem 0.5rem 0.1rem;
+  background: #e2e8f0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.trend-scroll__thumb {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: #0e7490;
+  opacity: 0.75;
+  border-radius: 999px;
+  min-width: 14px;
+}
+
+.trend-scroll:hover .trend-scroll__thumb {
+  opacity: 1;
+}

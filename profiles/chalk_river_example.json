@@ -1,0 +1,498 @@
+{
+  "ops_reporter_profile": 1,
+  "plant": {
+    "name": "Chalk River Water Treatment Plant",
+    "municipality": "Town of Laurentian Hills"
+  },
+  "tag_config": {
+    "profile_name": "Chalk River WTP",
+    "sections": [
+      {
+        "id": "flows",
+        "title": "Flows"
+      },
+      {
+        "id": "fluoride",
+        "title": "Fluoride Analyzer"
+      },
+      {
+        "id": "chlorine",
+        "title": "Free Chlorine Analyzers"
+      },
+      {
+        "id": "levels",
+        "title": "Level Transmitters"
+      },
+      {
+        "id": "ph",
+        "title": "pH Analyzers"
+      },
+      {
+        "id": "temp",
+        "title": "Temperature Transmitter"
+      },
+      {
+        "id": "turbidity",
+        "title": "Turbidity Analyzers"
+      }
+    ],
+    "trend": [
+      {
+        "tag": "FIT101",
+        "description": "Raw Water Flow",
+        "historian": "WTP_FIT101_VALUE",
+        "section": "flows",
+        "units": "L/s",
+        "totalize": true,
+        "total_units": "m3"
+      },
+      {
+        "tag": "FIT102",
+        "description": "Treated Water Flow",
+        "historian": "WTP_FIT102_VALUE",
+        "section": "flows",
+        "units": "L/s",
+        "totalize": true,
+        "total_units": "m3"
+      },
+      {
+        "tag": "FIT103",
+        "description": "Water Flow to SCU 1",
+        "historian": "WTP_FIT103_VALUE",
+        "section": "flows",
+        "units": "L/s",
+        "totalize": true,
+        "total_units": "m3"
+      },
+      {
+        "tag": "FIT104",
+        "description": "Water Flow to SCU 2",
+        "historian": "WTP_FIT104_VALUE",
+        "section": "flows",
+        "units": "L/s",
+        "totalize": true,
+        "total_units": "m3"
+      },
+      {
+        "tag": "FIT105",
+        "description": "Treated Flow Before Chem. Injection",
+        "historian": "WTP_FIT105_VALUE",
+        "section": "flows",
+        "units": "L/s",
+        "totalize": true,
+        "total_units": "m3"
+      },
+      {
+        "tag": "FIT106",
+        "description": "Distribution Flow",
+        "historian": "TOWER_FIT106_VALUE",
+        "section": "flows",
+        "units": "L/s",
+        "totalize": true,
+        "total_units": "m3"
+      },
+      {
+        "tag": "FL01",
+        "description": "Treated Water Fluoride",
+        "historian": "TOWER_FL01_VALUE",
+        "section": "fluoride",
+        "units": "mg/L",
+        "totalize": false,
+        "total_units": null
+      },
+      {
+        "tag": "FRC01",
+        "description": "Elevated Tower Water free chlorine residual",
+        "historian": "TOWER_FRC01_VALUE",
+        "section": "chlorine",
+        "units": "mg/L",
+        "totalize": false,
+        "total_units": null
+      },
+      {
+        "tag": "FRC02",
+        "description": "Treated Water Cl2 Residual",
+        "historian": "WTP_FRC02_VALUE",
+        "section": "chlorine",
+        "units": "mg/L",
+        "totalize": false,
+        "total_units": null
+      },
+      {
+        "tag": "LIT01",
+        "description": "Sludge Holding Tank Level",
+        "historian": "WTP_LIT01_VALUE",
+        "section": "levels",
+        "units": "%",
+        "totalize": false,
+        "total_units": null
+      },
+      {
+        "tag": "LIT02",
+        "description": "Treated Clearwell Well Level",
+        "historian": "WTP_LIT02_VALUE",
+        "section": "levels",
+        "units": "%",
+        "totalize": false,
+        "total_units": null
+      },
+      {
+        "tag": "LIT03",
+        "description": "Elevated Water Tower Level",
+        "historian": "TOWER_LIT03_VALUE",
+        "section": "levels",
+        "units": "%",
+        "totalize": false,
+        "total_units": null
+      },
+      {
+        "tag": "PH01",
+        "description": "Raw Water pH",
+        "historian": "WTP_PH01_VALUE",
+        "section": "ph",
+        "units": "pH",
+        "totalize": false,
+        "total_units": null
+      },
+      {
+        "tag": "PH02",
+        "description": "Treated Water pH",
+        "historian": "WTP_PH02_VALUE",
+        "section": "ph",
+        "units": "pH",
+        "totalize": false,
+        "total_units": null
+      },
+      {
+        "tag": "PH03",
+        "description": "Elevated Water pH",
+        "historian": "TOWER_PH03_VALUE",
+        "section": "ph",
+        "units": "pH",
+        "totalize": false,
+        "total_units": null
+      },
+      {
+        "tag": "PH04",
+        "description": "Corry Lake Raw Water pH",
+        "historian": "LOW_PH04_VALUE",
+        "section": "ph",
+        "units": "pH",
+        "totalize": false,
+        "total_units": null
+      },
+      {
+        "tag": "TEM01",
+        "description": "Tower Water Temperature",
+        "historian": "TOWER_TEM01_VALUE",
+        "section": "temp",
+        "units": "C",
+        "totalize": false,
+        "total_units": null
+      },
+      {
+        "tag": "TUR01",
+        "description": "Filter 1 Turbidity",
+        "historian": "F1_TUR01_VALUE",
+        "section": "turbidity",
+        "units": "NTU",
+        "totalize": false,
+        "total_units": null
+      },
+      {
+        "tag": "TUR02",
+        "description": "Filter 2 Turbidity",
+        "historian": "F2_TUR02_VALUE",
+        "section": "turbidity",
+        "units": "NTU",
+        "totalize": false,
+        "total_units": null
+      },
+      {
+        "tag": "TUR03",
+        "description": "Raw Water Turbidity",
+        "historian": "WTP_TUR03_VALUE",
+        "section": "turbidity",
+        "units": "NTU",
+        "totalize": false,
+        "total_units": null
+      }
+    ],
+    "motors": [
+      {
+        "tag": "SP1",
+        "description": "Sludge Holding Tank Pump 1 Run time",
+        "historian": "WTP_SP1_RUNNING"
+      },
+      {
+        "tag": "SP2",
+        "description": "Sludge Holding Tank Pump 2 Run time",
+        "historian": "WTP_SP2_RUNNING"
+      },
+      {
+        "tag": "M1",
+        "description": "Solid Contact Unit #1 Mixer1 Run time",
+        "historian": "WTP_M1_RUNNING"
+      },
+      {
+        "tag": "M2",
+        "description": "Sludge Holding Tank Mixer Run time",
+        "historian": "WTP_M2_RUNNING"
+      },
+      {
+        "tag": "M3",
+        "description": "Alkalinity M3 Run time",
+        "historian": "WTP_M3_RUNNING"
+      },
+      {
+        "tag": "M4",
+        "description": "Alkalinity M4 Run time",
+        "historian": "WTP_M4_RUNNING"
+      },
+      {
+        "tag": "M5",
+        "description": "PH Control Tank Mixer M5 Run time",
+        "historian": "WTP_M5_RUNNING"
+      },
+      {
+        "tag": "M6",
+        "description": "Polymer Tank Mixer 6 Run time",
+        "historian": "WTP_M6_RUNNING"
+      },
+      {
+        "tag": "RD1",
+        "description": "Solid Contact Unit #2 Rake Drive Run time",
+        "historian": "WTP_RD1_RUNNING"
+      },
+      {
+        "tag": "TD1",
+        "description": "Turbin Drive TD1 Run time",
+        "historian": "WTP_TD1_RUNNING"
+      },
+      {
+        "tag": "HLP3",
+        "description": "High Lift Pump #1 Run time",
+        "historian": "WTP_HLP3_RUNNING"
+      },
+      {
+        "tag": "HLP4",
+        "description": "High Lift Pump #2 Run time",
+        "historian": "WTP_HLP4_RUNNING"
+      },
+      {
+        "tag": "HLP5",
+        "description": "High Lift Pump #3 Run time",
+        "historian": "WTP_HLP5_RUNNING"
+      },
+      {
+        "tag": "AB1",
+        "description": "Air Scour Blower Run time",
+        "historian": "WTP_AB1_RUNNING"
+      },
+      {
+        "tag": "LLP1",
+        "description": "Low Lift Pump #1 Run time",
+        "historian": "LOW_LLP1_RUNNING"
+      },
+      {
+        "tag": "LLP2",
+        "description": "Low Lift Pump #2 Run time",
+        "historian": "LOW_LLP2_RUNNING"
+      }
+    ],
+    "feedback": [
+      {
+        "tag": "FB-LLP1-ACT",
+        "description": "Low lift pump 1 \u2014 actual",
+        "historian": "LOW_LLP1_ACTUAL",
+        "units": "%"
+      },
+      {
+        "tag": "FB-LLP1-SC",
+        "description": "Low lift pump 1 \u2014 speed control",
+        "historian": "LOW_LLP1_SC_ACTUAL",
+        "units": "%"
+      },
+      {
+        "tag": "FB-LLP2-ACT",
+        "description": "Low lift pump 2 \u2014 actual",
+        "historian": "LOW_LLP2_ACTUAL",
+        "units": "%"
+      },
+      {
+        "tag": "FB-LLP2-SC",
+        "description": "Low lift pump 2 \u2014 speed control",
+        "historian": "LOW_LLP2_SC_ACTUAL",
+        "units": "%"
+      },
+      {
+        "tag": "FB-CMP03-ACT",
+        "description": "Compressor 03 \u2014 actual",
+        "historian": "WTP_CMP03_ACTUAL",
+        "units": "%"
+      },
+      {
+        "tag": "FB-CMP04-ACT",
+        "description": "Compressor 04 \u2014 actual",
+        "historian": "WTP_CMP04_ACTUAL",
+        "units": "%"
+      },
+      {
+        "tag": "FB-CMP05-ACT",
+        "description": "Compressor 05 \u2014 actual",
+        "historian": "WTP_CMP05_ACTUAL",
+        "units": "%"
+      },
+      {
+        "tag": "FB-CMP10-ACT",
+        "description": "Compressor 10 \u2014 actual",
+        "historian": "WTP_CMP10_ACTUAL",
+        "units": "%"
+      },
+      {
+        "tag": "FB-CMP11-ACT",
+        "description": "Compressor 11 \u2014 actual",
+        "historian": "WTP_CMP11_ACTUAL",
+        "units": "%"
+      },
+      {
+        "tag": "FB-CMP03-OUT",
+        "description": "Compressor 03 \u2014 output",
+        "historian": "WTP_CMP03_OUT",
+        "units": "%"
+      },
+      {
+        "tag": "FB-CMP04-OUT",
+        "description": "Compressor 04 \u2014 output",
+        "historian": "WTP_CMP04_OUT",
+        "units": "%"
+      },
+      {
+        "tag": "FB-CMP05-OUT",
+        "description": "Compressor 05 \u2014 output",
+        "historian": "WTP_CMP05_OUT",
+        "units": "%"
+      },
+      {
+        "tag": "FB-CMP10-OUT",
+        "description": "Compressor 10 \u2014 output",
+        "historian": "WTP_CMP10_OUT",
+        "units": "%"
+      },
+      {
+        "tag": "FB-CMP11-OUT",
+        "description": "Compressor 11 \u2014 output",
+        "historian": "WTP_CMP11_OUT",
+        "units": "%"
+      },
+      {
+        "tag": "FB-CMP0607-ACT",
+        "description": "Compressor 06/07 \u2014 actual",
+        "historian": "LOW_CMP0607_ACTUAL",
+        "units": "%"
+      },
+      {
+        "tag": "FB-CMP0607-MO",
+        "description": "Compressor 06/07 \u2014 manual out",
+        "historian": "LOW_CMP0607_MAN_OUT",
+        "units": "%"
+      },
+      {
+        "tag": "FB-CMP0809-ACT",
+        "description": "Compressors 08/09 \u2014 actual",
+        "historian": "WTP_CMP0809_ACTUAL",
+        "units": "%"
+      },
+      {
+        "tag": "FB-CMP0809-OUT",
+        "description": "Compressors 08/09 \u2014 output",
+        "historian": "WTP_CMP0809_OUT",
+        "units": "%"
+      },
+      {
+        "tag": "FB-CMP0102-ACT",
+        "description": "Compressors 01/02 \u2014 actual",
+        "historian": "WTP_CMP0102_ACTUAL",
+        "units": "%"
+      },
+      {
+        "tag": "FB-CMP0102-OUT",
+        "description": "Compressors 01/02 \u2014 output",
+        "historian": "WTP_CMP0102_OUT",
+        "units": "%"
+      }
+    ],
+    "roles": {
+      "raw_flow": "WTP_FIT101_VALUE",
+      "treated_flow": "WTP_FIT102_VALUE",
+      "distribution_flow": "TOWER_FIT106_VALUE",
+      "clearwell_level": "WTP_LIT02_VALUE",
+      "tower_level": "TOWER_LIT03_VALUE",
+      "treated_cl2": "WTP_FRC02_VALUE",
+      "treated_ph": "WTP_PH02_VALUE",
+      "filter_turbidity": [
+        "F1_TUR01_VALUE",
+        "F2_TUR02_VALUE"
+      ],
+      "high_lift_pumps": [
+        "HLP3",
+        "HLP4",
+        "HLP5"
+      ]
+    },
+    "ct": {
+      "enabled": true,
+      "clearwell_volume_m3": 100.0,
+      "pipe_volume_m3": 23.56194490192345,
+      "tower_volume_m3": 1000.0,
+      "tower_volume_offset_m3": 300.0,
+      "baffle_clearwell": 0.1,
+      "baffle_tower": 0.1,
+      "baffle_pipe": 1.0,
+      "target_giardia_log": 0.5,
+      "target_virus_log": 2.0,
+      "inputs": {
+        "tower_level": [
+          "TOWER_LIT03_VALUE",
+          "min"
+        ],
+        "clearwell_level": [
+          "WTP_LIT02_VALUE",
+          "min"
+        ],
+        "pre_chem_flow": [
+          "WTP_FIT105_VALUE",
+          "max"
+        ],
+        "tower_cl2": [
+          "TOWER_FRC01_VALUE",
+          "min"
+        ],
+        "temperature": [
+          "TOWER_TEM01_VALUE",
+          "min"
+        ],
+        "treated_cl2": [
+          "WTP_FRC02_VALUE",
+          "min"
+        ],
+        "treated_flow": [
+          "WTP_FIT102_VALUE",
+          "max"
+        ],
+        "treated_ph": [
+          "WTP_PH02_VALUE",
+          "max"
+        ],
+        "distribution_flow": [
+          "TOWER_FIT106_VALUE",
+          "max"
+        ],
+        "tower_ph": [
+          "TOWER_PH03_VALUE",
+          "max"
+        ]
+      }
+    }
+  }
+}

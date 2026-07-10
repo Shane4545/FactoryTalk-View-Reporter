@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.py[cod]
+.Python
+.venv/
+venv/
+.env
+*.local
+
+# Build / kit outputs (rebuild with package_scada_kit.py)
+dist/
+dist-ssr/
+releases/
+releases/_pyi_work/
+
+# Runtime (local plant data — never commit)
+cache/
+archive/
+PDF/
+Web/
+config/plant.json
+config/backfill_state.json
+config/schedule_state.json
+config/schedule_log.jsonl
+*.log
+
+# Editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Screenshots / temp
+screenshots/
+proof/
+_golden/
