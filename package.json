@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "oxlint",
-    "preview": "vite preview"
+    "build:pages": "tsc -b && vite build --mode pages",
+    "deploy:pages": "npm run build:pages && node -e \"require('fs').copyFileSync('dist/index.html','dist/404.html')\" && npx --yes gh-pages -d dist -r https://github.com/Shane4545/FactoryTalk-View-Reporter.git -f"
   },
   "dependencies": {
     "react": "^19.2.7",

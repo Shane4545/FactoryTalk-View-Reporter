@@ -14,9 +14,15 @@ import { ConnectPage, DesignPage, DistributePage } from "./pages/StubPages";
 import { SetupPage } from "./pages/SetupPage";
 import "./index.css";
 
+const basename =
+  (import.meta as { env?: { BASE_URL?: string } }).env?.BASE_URL?.replace(
+    /\/$/,
+    "",
+  ) || undefined;
+
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename || undefined}>
       <Routes>
         <Route element={<AppShell />}>
           <Route index element={<HomePage />} />

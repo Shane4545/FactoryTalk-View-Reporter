@@ -1,20 +1,22 @@
-# Live demo link
+# Live demo (lasting GitHub Pages link)
 
-**No credit card / no cloud bill.** This runs on Shane's PC and is shared with a free Cloudflare tunnel.
+**No credit card. No tunnel. Link stays up.**
 
-## Current public URL
+## Open the app
 
-https://meets-butter-advertise-where.trycloudflare.com
+**https://shane4545.github.io/FactoryTalk-View-Reporter/**
 
-If the link is dead, ask Shane to run `KEEP_DEMO_ONLINE.bat` (it auto-restarts the tunnel).
+This is a static demo of Ops Reporter with real Chalk River sample days baked in (2026-06-13 … 2026-06-15).
 
-## What to click
+### Try
 
-1. Open the URL above
-2. **Insights** - plant health
-3. **Reports -> Daily** - pick **2026-06-14** (good sample day)
-4. **Trends** - pick a tag like FIT101
+1. **Insights**
+2. **Reports → Daily** → date **2026-06-14**
+3. **Reports → Monthly** → **2026-06**
+4. **Trends** → tag **FIT101**
 
-## Offline sample data (clone and run yourself)
+Connect / Setup / live DLGLOG updates need the desktop app (clone the repo and run `START_OPS_REPORTER.bat`).
+
+## Offline sample DLGLOG (run on your PC)
 
 https://github.com/Shane4545/FactoryTalk-View-Reporter/releases/tag/demo-v1
