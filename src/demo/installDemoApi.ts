@@ -145,7 +145,7 @@ export function installDemoApi(): boolean {
           demo: true,
           note:
             getDemoMode() === "blank"
-              ? "Blank demo — Load Chalk River sample on Connect to see trends"
+              ? "Blank static demo — connect is offline in the browser; use the SCADA kit on a PC"
               : "Static demo — only FIT101 1d series is bundled",
         }),
         { status: 200, headers: { "Content-Type": "application/json" } },
@@ -158,7 +158,7 @@ export function installDemoApi(): boolean {
         demo: true,
         error:
           getDemoMode() === "blank"
-            ? "Blank demo — open Connect and Load Chalk River sample, or download the SCADA kit for a real plant."
+            ? "Blank static demo — download the SCADA kit to Connect a real DLGLOG."
             : "This control needs the live / SCADA app. Static chalk sample covers Home, Insights, Daily/Monthly, and FIT101 trends.",
       }),
       { status: 501, headers: { "Content-Type": "application/json" } },
