@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="CCI">
+  <!-- Letters only, transparent - Capital Controls green #00A63B / navy #01234D -->
+  <text x="0" y="23"
+        font-family="Arial Black, Arial, Helvetica, sans-serif"
+        font-weight="900" font-size="14.5" fill="#00A63B">C</text>
+  <text x="12" y="23"
+        font-family="Arial Black, Arial, Helvetica, sans-serif"
+        font-weight="900" font-size="14.5" fill="#01234D">C</text>
+  <text x="24" y="23"
+        font-family="Arial Black, Arial, Helvetica, sans-serif"
+        font-weight="900" font-size="14.5" fill="#01234D">I</text>
+</svg>

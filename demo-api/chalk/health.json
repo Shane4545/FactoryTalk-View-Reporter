@@ -1,0 +1,24 @@
+﻿{
+    "ok":  true,
+    "dlglog":  "demo_dlglog (sample)",
+    "xlreporter":  false,
+    "plant":  {
+                  "id":  "chalk-river-wtp",
+                  "name":  "Chalk River Water Treatment Plant",
+                  "municipality":  "Town of Laurentian Hills"
+              },
+    "models":  {
+                   "WTP_TREND":  true,
+                   "WTP_MOTORS":  true,
+                   "WTP_FEEDBACK":  true
+               },
+    "models_on_disk":  [
+                           "WTP_FEEDBACK",
+                           "WTP_MOTORS",
+                           "WTP_REPORTS",
+                           "WTP_TREND"
+                       ],
+    "date_count":  109,
+    "first_date":  "2025-10-27",
+    "last_date":  "2026-06-15"
+}

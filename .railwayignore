@@ -1,0 +1,36 @@
+# Used with: railway up --no-gitignore
+# (demo_dlglog is gitignored but must ship in the cloud image)
+
+.git
+.gitignore
+node_modules
+cache
+archive
+PDF
+Web
+releases
+tools
+screenshots
+proof
+_golden
+__pycache__
+*.pyc
+.env
+src
+public
+index.html
+package.json
+package-lock.json
+tsconfig.app.json
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
+.oxlintrc.json
+*.bat
+CAPABILITY_MAP.md
+PRODUCT.md
+PROJECT_CHARTER.md
+config/plant.json
+config/backfill_state.json
+config/schedule_state.json
+config/schedule_log.jsonl

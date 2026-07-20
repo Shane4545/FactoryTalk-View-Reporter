@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plant Reporter — live demo</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 36rem; margin: 3rem auto; padding: 0 1.25rem; line-height: 1.5; color: #1a1a1a; }
+    a { color: #0b57d0; }
+    .err { color: #b00020; }
+    code { background: #f2f2f2; padding: 0.1em 0.35em; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Plant Reporter</h1>
+  <p id="status">Opening the live plant demo…</p>
+  <p id="detail"></p>
+  <script>
+    (async () => {
+      const status = document.getElementById("status");
+      const detail = document.getElementById("detail");
+      try {
+        // Prefer raw.githubusercontent (no Pages CDN lag) so tunnel URL updates show up fast.
+        const res = await fetch(
+          "https://raw.githubusercontent.com/Shane4545/FactoryTalk-View-Reporter/gh-pages/live-url.json?t=" + Date.now(),
+          { cache: "no-store" }
+        );
+        if (!res.ok) throw new Error("live-url.json HTTP " + res.status);
+        const data = await res.json();
+        const url = (data && data.url || "").trim();
+        if (!/^https:\/\//i.test(url)) throw new Error("No live URL published yet");
+        status.textContent = "Redirecting to live demo…";
+        detail.innerHTML = '<a href="' + url.replace(/"/g, "&quot;") + '">' + url.replace(/</g, "&lt;") + "</a>";
+        location.replace(url.replace(/\/$/, "") + "/");
+      } catch (e) {
+        status.className = "err";
+        status.textContent = "Live demo is offline right now.";
+        detail.innerHTML =
+          "The host PC must be running <code>WEEKEND_KEEP_ONLINE.bat</code> (or <code>KEEP_DEMO_ONLINE.bat</code>). " +
+          "Static sample (always up): <a href=\"./\">GitHub Pages demo</a>.";
+        console.error(e);
+      }
+    })();
+  </script>
+</body>
+</html>

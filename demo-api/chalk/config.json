@@ -1,0 +1,62 @@
+{
+    "product":  "Plant Reporter",
+    "version":  "1.0.0",
+    "plant":  {
+                  "id":  "chalk-river-wtp",
+                  "name":  "Chalk River Water Treatment Plant",
+                  "municipality":  "Town of Laurentian Hills"
+              },
+    "dlglog_path":  "demo_dlglog",
+    "dlglog_candidates":  [
+                              "demo_dlglog"
+                          ],
+    "models":  {
+                   "trend":  "WTP_TREND",
+                   "motors":  "WTP_MOTORS",
+                   "feedback":  "WTP_FEEDBACK"
+               },
+    "api_port":  8787,
+    "ui_port":  5173,
+    "schedule":  {
+                     "enabled":  true,
+                     "daily":  {
+                                   "enabled":  true,
+                                   "time":  "06:00",
+                                   "print":  false,
+                                   "offset_days":  1
+                               },
+                     "monthly":  {
+                                     "enabled":  true,
+                                     "day":  1,
+                                     "time":  "06:30",
+                                     "print":  false
+                                 },
+                     "printer":  ""
+                 },
+    "report_prefs":  {
+                         "hidden_trend_tags":  [
+
+                                               ],
+                         "hidden_motor_tags":  [
+
+                                               ],
+                         "hidden_feedback_tags":  [
+
+                                                  ],
+                         "hidden_sections":  [
+
+                                             ]
+                     },
+    "tag_config":  {
+
+                   },
+    "resolved_dlglog":  "demo_dlglog",
+    "ok":  true,
+    "error":  null,
+    "models_on_disk":  [
+                           "WTP_FEEDBACK",
+                           "WTP_MOTORS",
+                           "WTP_REPORTS",
+                           "WTP_TREND"
+                       ]
+}
