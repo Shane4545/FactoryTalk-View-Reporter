@@ -8,10 +8,15 @@ import {
   ProduceCustomPage,
   ProduceDailyPage,
   ProduceMonthlyPage,
+  ProduceWeeklyPage,
+  ProduceYearlyPage,
   ReportsPage,
 } from "./pages/ReportsPages";
-import { ConnectPage, DesignPage, DistributePage } from "./pages/StubPages";
+import { DistributePage } from "./pages/StubPages";
+import { LogPage } from "./pages/LogPage";
+import { ConnectPage } from "./pages/ConnectPage";
 import { SetupPage } from "./pages/SetupPage";
+import { HelpPage } from "./pages/HelpPage";
 import "./index.css";
 
 const basename =
@@ -30,13 +35,18 @@ export default function App() {
           <Route path="insights" element={<InsightsPage />} />
           <Route path="connect" element={<ConnectPage />} />
           <Route path="setup" element={<SetupPage />} />
-          <Route path="design" element={<DesignPage />} />
+          <Route path="help" element={<HelpPage />} />
+          <Route path="design" element={<Navigate to="/reports" replace />} />
           <Route path="reports" element={<ReportsPage />} />
           <Route path="reports/daily" element={<ProduceDailyPage />} />
+          <Route path="reports/weekly" element={<ProduceWeeklyPage />} />
           <Route path="reports/monthly" element={<ProduceMonthlyPage />} />
+          <Route path="reports/yearly" element={<ProduceYearlyPage />} />
           <Route path="reports/custom" element={<ProduceCustomPage />} />
           <Route path="reports/trends" element={<TrendsPage />} />
+          <Route path="trends" element={<Navigate to="/reports/trends" replace />} />
           <Route path="distribute" element={<DistributePage />} />
+          <Route path="log" element={<LogPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

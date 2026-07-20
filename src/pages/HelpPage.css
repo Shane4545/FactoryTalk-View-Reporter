@@ -1,0 +1,76 @@
+.help-page .help-toc ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+  columns: 2;
+  gap: 1.5rem;
+}
+
+.help-page .help-toc a {
+  color: #0e7490;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.help-page .help-toc a:hover {
+  text-decoration: underline;
+}
+
+.help-section {
+  scroll-margin-top: 1rem;
+}
+
+.help-intro {
+  margin: 0 0 0.85rem;
+  color: #475569;
+  line-height: 1.5;
+  max-width: 52rem;
+}
+
+.help-tips {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 0.5rem;
+}
+
+.help-tips h3 {
+  margin: 0 0 0.4rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #0369a1;
+}
+
+.help-tips ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #0f172a;
+}
+
+.help-tips li {
+  margin: 0.35rem 0;
+  line-height: 1.45;
+}
+
+.help-footer {
+  margin: 1.5rem 0 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.help-footer a {
+  color: #0e7490;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.help-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .help-page .help-toc ul {
+    columns: 1;
+  }
+}

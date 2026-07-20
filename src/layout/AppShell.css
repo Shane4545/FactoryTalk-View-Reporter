@@ -7,6 +7,63 @@
   font-family: "Segoe UI", "IBM Plex Sans", system-ui, sans-serif;
 }
 
+/* Collapsed nav: slim dark rail, pages get nearly the whole screen */
+.shell--nav-collapsed {
+  grid-template-columns: 2.4rem 1fr;
+}
+
+.shell__rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 0.2rem;
+  border: none;
+  background: #0b1220;
+  color: #67e8f9;
+  cursor: pointer;
+}
+
+.shell__rail:hover {
+  background: #111c33;
+}
+
+.shell__rail-chevron {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.shell__rail-text {
+  writing-mode: vertical-rl;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.shell__collapse {
+  align-self: flex-start;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(148, 163, 184, 0.08);
+  border-radius: 0.45rem;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+.shell__collapse:hover {
+  color: #67e8f9;
+  border-color: #67e8f9;
+}
+
+.shell__aside[hidden] {
+  display: none;
+}
+
 .shell__aside {
   background: #0b1220;
   color: #e2e8f0;
@@ -22,16 +79,28 @@
   align-items: center;
   text-decoration: none;
   color: inherit;
+  min-width: 0;
+}
+
+.shell__brand > div {
+  min-width: 0;
+  flex: 1;
 }
 
 .shell__brand strong {
   display: block;
   font-size: 0.95rem;
+  line-height: 1.2;
 }
 
 .shell__brand small {
+  display: block;
   color: #94a3b8;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
+  line-height: 1.25;
+  margin-top: 0.15rem;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .shell__mark {
@@ -136,9 +205,49 @@
   overflow: auto;
 }
 
+/* Always-visible help — works even when the left nav is collapsed */
+.shell__help-fab {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 80;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #0e7490;
+  color: #fff;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.25);
+  border: 2px solid #fff;
+}
+
+.shell__help-fab:hover {
+  background: #0f766e;
+  color: #fff;
+}
+
+.shell__help-fab:focus-visible {
+  outline: 3px solid #67e8f9;
+  outline-offset: 2px;
+}
+
 @media (max-width: 900px) {
   .shell {
     grid-template-columns: 1fr;
+  }
+  .shell__rail {
+    flex-direction: row;
+    justify-content: center;
+    padding: 0.5rem 0.75rem;
+  }
+  .shell__rail-text {
+    writing-mode: horizontal-tb;
   }
   .shell__aside {
     flex-direction: row;

@@ -12,36 +12,26 @@ type PlantInfo = {
   version?: string;
 };
 
-const phases = [
+const shortcuts = [
+  {
+    to: "/reports/daily",
+    title: "Daily report",
+    body: "Produce yesterday or any calendar day from DLGLOG.",
+  },
   {
     to: "/insights",
     title: "Insights",
-    body: "Traffic-light plant health — stuck transmitters, motor duty, CT margin.",
+    body: "Traffic-light plant health — transmitters and CT margin.",
   },
   {
-    to: "/connect",
-    title: "Connect",
-    body: "FactoryTalk DLGLOG status — models, dates, live path.",
+    to: "/reports/trends",
+    title: "Trends",
+    body: "Overlay up to six tags across any time window.",
   },
   {
     to: "/setup",
     title: "Setup",
-    body: "Map your plant's tags — sections, motors, roles, CT geometry.",
-  },
-  {
-    to: "/reports",
-    title: "Reports",
-    body: "Daily, Monthly, Custom, Trends — Preview, Print PDF, Archive.",
-  },
-  {
-    to: "/explore",
-    title: "Explore",
-    body: "Any tag, any window — 1 hour to 1 year.",
-  },
-  {
-    to: "/distribute",
-    title: "Archive",
-    body: "Saved HTML/JSON reports on disk for operators and auditors.",
+    body: "Map tags, sections, Insight roles, and CT geometry.",
   },
 ];
 
@@ -64,58 +54,42 @@ export function HomePage() {
   return (
     <div className="home">
       <section className="hero">
-        <p className="eyebrow">Ops Reporter {plant?.version ? `· v${plant.version}` : ""}</p>
+        <p className="eyebrow">
+          Plant Reporter{plant?.version ? ` · v${plant.version}` : ""}
+        </p>
         <h1>
           Plant reporting
           <br />
-          without XLReporter
+          from your DLGLOG
         </h1>
         <p className="lede">
           {name}
           {plant?.ok
             ? ` · ${plant.date_count} days on disk (${plant.first_date} → ${plant.last_date})`
-            : " · connect DLGLOG to go live"}
-          . CT, motor starts/stops, trends, and archives — browser only.
+            : " · unloaded — Connect a DLGLOG to go live"}
+          . Daily and monthly ops reports, CT, trends, and
+          archives — browser only.
         </p>
         <div className="hero-actions">
-          <Link className="btn btn-primary" to="/reports/daily">
+          <Link className="btn btn-primary" to="/connect">
+            Connect DLGLOG
+          </Link>
+          <Link className="btn btn-secondary" to="/reports/daily">
             Daily report
           </Link>
           <Link className="btn btn-secondary" to="/explore">
             Explore tags
           </Link>
-          <Link className="btn btn-secondary" to="/reports/trends">
-            Trends
-          </Link>
         </div>
       </section>
 
       <section className="phases">
-        {phases.map((p) => (
+        {shortcuts.map((p) => (
           <Link key={p.to} to={p.to} className="phase-card">
             <h2>{p.title}</h2>
             <p>{p.body}</p>
           </Link>
         ))}
-      </section>
-
-      <section className="parity">
-        <h2>Ready for plant use</h2>
-        <ul>
-          <li>
-            <strong>Live:</strong> Daily / Monthly / Custom, CT, starts/stops/hours,
-            Explore, Trends, Print PDF, Save archive
-          </li>
-          <li>
-            <strong>Start:</strong> double-click{" "}
-            <code>START_OPS_REPORTER.bat</code> → open{" "}
-            <code>http://127.0.0.1:8787</code>
-          </li>
-          <li>
-            <strong>Any FT View SE plant:</strong> point Connect at the DLGLOG,
-            map tags in Setup — no XLReporter required
-          </li>
-        </ul>
       </section>
     </div>
   );
