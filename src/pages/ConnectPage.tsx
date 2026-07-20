@@ -2,11 +2,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { API } from "../api";
 import { BusyOverlay } from "../components/BusyOverlay";
-import {
-  getDemoMode,
-  isStaticDemo,
-  setDemoMode,
-} from "../demo/installDemoApi";
 import "./ConnectDistribute.css";
 
 type Health = {
@@ -216,19 +211,6 @@ export function ConnectPage() {
     }
   };
 
-  const staticDemo = isStaticDemo();
-  const demoMode = staticDemo ? getDemoMode() : null;
-
-  const loadChalkSample = () => {
-    setDemoMode("chalk");
-    window.location.reload();
-  };
-
-  const resetBlankDemo = () => {
-    setDemoMode("blank");
-    window.location.reload();
-  };
-
   return (
     <div className="page">
       <header className="page__head">
@@ -246,62 +228,6 @@ export function ConnectPage() {
           </p>
         </div>
       </header>
-
-      {staticDemo && (
-        <section className="cfg-card" style={{ borderColor: "#0b57d0" }}>
-          <h2>Browser demo (GitHub Pages)</h2>
-          <p className="cfg-hint">
-            This page starts <strong>blank / unloaded</strong> — same as a new
-            plant install. Folder Browse cannot reach your PC’s DLGLOG from the
-            web, so use the sample button to see a loaded Chalk River plant, or
-            download the SCADA kit for a real Connect on a plant PC.
-          </p>
-          <p className="cfg-live">
-            {demoMode === "chalk" ? (
-              <span className="ok">
-                Sample loaded · Chalk River (3 demo days)
-              </span>
-            ) : (
-              <span className="warn">Unloaded · no DLGLOG connected</span>
-            )}
-          </p>
-          <div className="cfg-actions">
-            {demoMode !== "chalk" ? (
-              <button
-                type="button"
-                className="btn btn-primary"
-                onClick={loadChalkSample}
-              >
-                Load Chalk River sample
-              </button>
-            ) : (
-              <button
-                type="button"
-                className="btn btn-secondary"
-                onClick={resetBlankDemo}
-              >
-                Reset to blank (unloaded)
-              </button>
-            )}
-            <a
-              className="btn btn-secondary"
-              href="https://github.com/Shane4545/FactoryTalk-View-Reporter/releases/tag/v1.1.0"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Download SCADA kit
-            </a>
-            <a
-              className="btn btn-secondary"
-              href="https://github.com/Shane4545/FactoryTalk-View-Reporter/releases/tag/demo-v1"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Sample DLGLOG zip
-            </a>
-          </div>
-        </section>
-      )}
 
       <section className="cfg-card">
         <h2>Active connection</h2>
