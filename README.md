@@ -1,90 +1,76 @@
-# Ops Reporter
+# Plant Reporter (FactoryTalk View Reporter)
 
 **Plant operations reporting without XLReporter.**  
 Reads FactoryTalk View SE **DLGLOG** files directly. Browser UI + local API.
 
-Works on any FT View SE plant: Connect → point at DLGLOG → Setup → map your tags.
+Works on any FT View SE plant: Connect → point at DLGLOG → Setup → map your tags → Activate.
 
-## Quick start (Windows)
+---
 
-### Option A — SCADA kit (easiest for plant PCs)
+## For co-workers — download the blank kit
 
-1. Download the latest **`OpsReporter_SCADA.zip`** from [Releases](../../releases) (or build it — see below).
-2. Extract anywhere (e.g. `C:\OpsReporter\`).
-3. Run **`OpsReporter.exe`** (or `START.bat`).
-4. Browser opens → **Connect** → Browse to your DLGLOG folder → Save.
-5. Open **Setup** → Scan tags → map instruments/motors → Save plant profile.
+**Release:** [Plant Reporter v1.1.0 — blank SCADA kit](https://github.com/Shane4545/FactoryTalk-View-Reporter/releases/tag/v1.1.0)
 
-Chalk River ships as the built-in example profile. Other plants configure Setup once.
+1. Download **`PlantReporter_SCADA.zip`**
+2. Extract the whole folder (keep `PlantReporter.exe` next to `_internal` and `config`)
+3. Run **`PlantReporter.exe`** (or `START.bat`)
+4. Browser opens → **Connect** → Browse your plant’s DLGLOG → Plant name → Save & connect
+5. **Setup** → Scan DLGLOG tags → map instruments/motors → **Activate profile**
+6. **Reports → Daily** → Update from DLGLOG
 
-### Option B — From source (this repo)
+This kit starts **blank** (no plant name, no tags, no Chalk River config).  
+**Connect → Default** wipes tags, path, cache, and archives anytime.
+
+### Optional sample DLGLOG (practice data)
+
+Already published: [demo-v1 — Chalk River 3 days](https://github.com/Shane4545/FactoryTalk-View-Reporter/releases/tag/demo-v1)
+
+- Download `demo_dlglog_chalk_river_3days.zip`
+- Unzip → Connect → Browse that folder → Save
+- Dates: **2026-06-13 … 2026-06-15** (WTP_TREND / WTP_MOTORS / WTP_FEEDBACK)
+
+---
+
+## Live / static demos
+
+| Link | What |
+|------|------|
+| [GitHub Pages sample](https://shane4545.github.io/FactoryTalk-View-Reporter/) | Static sample days only |
+| [Live bookmark](https://shane4545.github.io/FactoryTalk-View-Reporter/live.html) | Redirects to live tunnel when host PC is online |
+
+---
+
+## From source (this repo)
 
 **Needs:** Python 3.11+ and Node.js LTS on PATH.
 
 ```bat
-cd apps\ops-reporter
 START_OPS_REPORTER.bat
-```
-
-Or manually:
-
-```bat
-cd apps\ops-reporter
-python -m pip install -r server\requirements.txt
-npm install
-npm run build
-cd server
-python -m uvicorn main:app --host 127.0.0.1 --port 8787
 ```
 
 Open http://127.0.0.1:8787
 
-Dev UI (hot reload): `npm run dev` → http://127.0.0.1:5173 (API still on :8787).
+## Build the SCADA zip
+
+```bat
+python package_scada_kit.py
+```
+
+Output: `releases\PlantReporter_SCADA\` and `releases\PlantReporter_SCADA.zip`.
 
 ## What you get
 
 | Feature | Status |
 |---------|--------|
-| Daily / Monthly / Custom ops reports | Live |
+| Daily / Weekly / Monthly / Yearly / Custom | Live |
 | Archive-first load + Update from DLGLOG | Live |
-| CT disinfection (configurable geometry + opt-out) | Live |
-| Motor starts / stops / ON hours + duty Insights | Live |
-| Plant Insights (traffic-light health, WQI, filters) | Live |
-| Tag Explorer + multi-tag Trends | Live |
-| PDF / Web HTML / archive folders (XLReporter-style) | Live |
-| Setup page — any plant's tags from Tagname.DAT | Live |
-| Hide unused mixers / sections | Live |
-| Scheduler | Live |
-| Email / cloud multi-tenant billing | Not in v1 |
+| CT disinfection (optional, Setup-mapped) | Live |
+| Plant Insights + Trends | Live |
+| Scheduler / Archive PDF+Web | Live |
+| Blank Default wipe (sites + cache + archives) | Live |
 
-## Config
-
-- `config/plant.json` — plant name, DLGLOG path, models, tag profile (created on first run).
-- **Connect** page — pick the DLGLOG folder (models auto-detected).
-- **Setup** page — map tags, Insight roles, CT volumes/baffling.
-- Export/import profile JSON to copy a plant setup to another PC.
-
-## Build the SCADA zip
-
-```bat
-cd apps\ops-reporter
-python package_scada_kit.py
-```
-
-Output: `releases\OpsReporter_SCADA\` and `releases\OpsReporter_SCADA.zip`.
-
-## Architecture
-
-```
-FactoryTalk DLGLOG (Float.DAT + Tagname)
-        ↓
-  FastAPI :8787  (+ built UI from dist/)
-        ↓
-  Browser
-```
-
-**Zero XLReporter / Excel dependency.**
+**Zero XLReporter / Excel dependency for this app.**
 
 ## License / sales
 
-Internal Capital Controls product demo. Contact sales for deployment terms.
+Internal Capital Controls product. Contact sales for deployment terms.
